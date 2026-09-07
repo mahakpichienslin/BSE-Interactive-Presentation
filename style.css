@@ -264,3 +264,32 @@ h1 {
   .hotspot { width: 30px; height: 30px; font-size: 12px; }
   .actions { grid-template-columns: 1fr; }
 }
+
+.main-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 18px 0 22px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #475467;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid #e4e7ec;
+  background: #fff;
+  transition: .2s ease;
+}
+
+.main-nav a:hover {
+  color: #e11d2e;
+  border-color: #e11d2e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
