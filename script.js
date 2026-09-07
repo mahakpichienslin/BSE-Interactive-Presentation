@@ -26,7 +26,6 @@ const toggleBtn = document.getElementById("toggleBtn");
 function render() {
   const info = lights[selected];
   const current = state[selected];
-  const selectedHotspot = hotspots.find(h => h.dataset.light === selected);
 
   hotspots.forEach(h => {
     h.classList.toggle("active", h.dataset.light === selected);
@@ -40,18 +39,26 @@ function render() {
   if (current.failed) {
     lightStatus.textContent = "FAULT";
     lightStatus.classList.add("fault");
+
     powerText.textContent = "OFF";
     statusText.textContent = "Failure detected";
+
     beacon.classList.add("off");
+
     toggleBtn.textContent = "Restore Light";
   } else {
     lightStatus.textContent = "NORMAL";
     lightStatus.classList.remove("fault");
+
     powerText.textContent = "ON";
     statusText.textContent = "Operational";
+
     beacon.classList.remove("off");
+
     toggleBtn.textContent = "Simulate Failure";
   }
+
+  updateMonitoring();
 }
 
 hotspots.forEach(hotspot => {
@@ -80,3 +87,42 @@ document.getElementById("resetBtn").addEventListener("click", () => {
 });
 
 render();
+function updateMonitoring() {
+  Object.keys(state).forEach(lightId => {
+    const failed = state[lightId].failed;
+
+    const card = document.querySelector(
+      `.monitor-card[data-light="${lightId}"]`
+    );
+
+    if (!card) return;
+
+    const dot = card.querySelector(".monitor-light");
+    const status = card.querySelector(".monitor-status");
+    const description = card.querySelector("p");
+
+    if (failed) {
+      dot.classList.remove("normal");
+      dot.classList.add("fault-light");
+
+      status.textContent = "FAULT";
+      status.classList.remove("normal-text");
+      status.classList.add("fault-text");
+
+      description.textContent = "Failure detected";
+
+      card.classList.add("fault-card");
+    } else {
+      dot.classList.remove("fault-light");
+      dot.classList.add("normal");
+
+      status.textContent = "NORMAL";
+      status.classList.remove("fault-text");
+      status.classList.add("normal-text");
+
+      description.textContent = "Operational";
+
+      card.classList.remove("fault-card");
+    }
+  });
+}
