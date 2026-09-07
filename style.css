@@ -677,3 +677,18 @@ html {
   }
 
 }
+/* FAILURE STATE */
+
+.monitor-light.fault-light {
+  background: #20242a;
+  box-shadow: 0 0 0 5px rgba(32, 36, 42, .08);
+}
+
+.fault-text {
+  color: #b42318;
+}
+
+.monitor-card.fault-card {
+  border-color: #fda4af;
+  background: #fff7f7;
+}
