@@ -2,151 +2,516 @@
 <html lang="th">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-  <title>BSE Roof Obstruction Light Concept</title> 
-  <link rel="stylesheet" href="style.css" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>BSE Roof Obstruction Light Concept</title>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+
   <main class="app-shell">
+
+    <!-- HEADER -->
     <header class="topbar">
+
       <div>
         <p class="eyebrow">B.S.E. ELECTRONIC</p>
-        <h1>Roof Obstruction Light Concept</h1> 
-        <p class="subtitle">Interactive project presentation</p>
+
+        <h1>
+          Roof Obstruction Light Concept
+        </h1>
+
+        <p class="subtitle">
+          Interactive project presentation
+        </p>
       </div>
+
       <div class="status-pill">
         <span class="status-dot"></span>
         Concept Mode
       </div>
+
     </header>
-    
-<nav class="main-nav">
-  <a href="#project">PROJECT</a>
-  <a href="#roof-plan">ROOF PLAN</a>
-  <a href="#lighting">LIGHTING SYSTEM</a>
-  <a href="#control">CONTROL</a>
-  <a href="#monitoring">MONITORING</a>
-</nav>
-    
+
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+
+      <a href="#project">PROJECT</a>
+
+      <a href="#roof-plan">
+        ROOF PLAN
+      </a>
+
+      <a href="#lighting">
+        LIGHTING SYSTEM
+      </a>
+
+      <a href="#control">
+        CONTROL
+      </a>
+
+      <a href="#monitoring">
+        MONITORING
+      </a>
+
+    </nav>
+
+
+    <!-- ================================= -->
+    <!-- ROOF PLAN -->
+    <!-- ================================= -->
+
     <section id="roof-plan" class="layout">
+
+
+      <!-- LEFT : ROOF PLAN -->
+
       <section class="plan-panel">
+
         <div class="panel-heading">
+
           <div>
-            <p class="eyebrow">PROJECT OVERVIEW</p>
-            <h2>Roof Plan</h2>
+            <p class="eyebrow">
+              PROJECT OVERVIEW
+            </p>
+
+            <h2>
+              Roof Plan
+            </h2>
           </div>
-          <button id="resetBtn" class="ghost-btn" type="button">Reset</button>
+
+
+          <button
+            id="resetBtn"
+            class="ghost-btn"
+            type="button"
+          >
+            Reset
+          </button>
+
         </div>
 
-        <div class="roof-stage" id="roofStage">
-          <img src="assets/roof-plan.png" alt="Roof plan with proposed obstruction light positions" />
 
-          <button class="hotspot active" style="left:14.5%; top:8.5%;" data-light="L01" aria-label="Light L01">1</button>
-          <button class="hotspot" style="left:80.1%; top:14.8%;" data-light="L02" aria-label="Light L02">2</button>
-          <button class="hotspot" style="left:79.8%; top:39.7%;" data-light="L03" aria-label="Light L03">3</button>
-          <button class="hotspot" style="left:12.4%; top:48.6%;" data-light="L04" aria-label="Light L04">4</button>
-          <button class="hotspot" style="left:13.4%; top:87.7%;" data-light="L05" aria-label="Light L05">5</button>
-          <button class="hotspot" style="left:45.1%; top:87.9%;" data-light="L06" aria-label="Light L06">6</button>
+        <div
+          class="roof-stage"
+          id="roofStage"
+        >
+
+          <img
+            src="assets/roof-plan.png"
+            alt="Roof plan with proposed obstruction light positions"
+          />
+
+
+          <!-- LIGHT 01 -->
+          <button
+            class="hotspot active"
+            style="left:14.5%; top:8.5%;"
+            data-light="L01"
+            aria-label="Light L01"
+          >
+            1
+          </button>
+
+
+          <!-- LIGHT 02 -->
+          <button
+            class="hotspot"
+            style="left:80.1%; top:14.8%;"
+            data-light="L02"
+            aria-label="Light L02"
+          >
+            2
+          </button>
+
+
+          <!-- LIGHT 03 -->
+          <button
+            class="hotspot"
+            style="left:79.8%; top:39.7%;"
+            data-light="L03"
+            aria-label="Light L03"
+          >
+            3
+          </button>
+
+
+          <!-- LIGHT 04 -->
+          <button
+            class="hotspot"
+            style="left:12.4%; top:48.6%;"
+            data-light="L04"
+            aria-label="Light L04"
+          >
+            4
+          </button>
+
+
+          <!-- LIGHT 05 -->
+          <button
+            class="hotspot"
+            style="left:13.4%; top:87.7%;"
+            data-light="L05"
+            aria-label="Light L05"
+          >
+            5
+          </button>
+
+
+          <!-- LIGHT 06 -->
+          <button
+            class="hotspot"
+            style="left:45.1%; top:87.9%;"
+            data-light="L06"
+            aria-label="Light L06"
+          >
+            6
+          </button>
+
         </div>
 
-        <div class="hint">คลิกจุดไฟบนแปลนเพื่อดูรายละเอียด • ตำแหน่งนี้เป็น Concept สำหรับการนำเสนอ</div>
+
+        <div class="hint">
+          คลิกจุดไฟบนแปลนเพื่อดูรายละเอียด
+          • ตำแหน่งนี้เป็น Concept สำหรับการนำเสนอ
+        </div>
+
       </section>
 
-    </aside>
-      </section>
-      <section id="lighting" class="content-section">
-  <div class="section-header">
-    <p class="eyebrow">LIGHTING SYSTEM</p>
-    <h2>Aviation Obstruction Light Layout</h2>
-    <p>
-      Proposed obstruction light arrangement based on the current roof concept.
-    </p>
-  </div>
 
-  <div class="lighting-grid">
 
-    <div class="lighting-card">
-      <div class="light-icon red"></div>
-      <h3>Light L01</h3>
-      <p>North-west roof edge</p>
-      <span>Concept / TBD</span>
-    </div>
-
-    <div class="lighting-card">
-      <div class="light-icon red"></div>
-      <h3>Light L02</h3>
-      <p>North-east upper corner</p>
-      <span>Concept / TBD</span>
-    </div>
-
-    <div class="lighting-card">
-      <div class="light-icon red"></div>
-      <h3>Light L03</h3>
-      <p>East roof projection</p>
-      <span>Concept / TBD</span>
-    </div>
-
-    <div class="lighting-card">
-      <div class="light-icon red"></div>
-      <h3>Light L04</h3>
-      <p>West mid roof edge</p>
-      <span>Concept / TBD</span>
-    </div>
-
-    <div class="lighting-card">
-      <div class="light-icon red"></div>
-      <h3>Light L05</h3>
-      <p>South-west roof corner</p>
-      <span>Concept / TBD</span>
-    </div>
-
-    <div class="lighting-card">
-      <div class="light-icon red"></div>
-      <h3>Light L06</h3>
-      <p>South-east roof edge</p>
-      <span>Concept / TBD</span>
-    </div>
-
-  </div>
-</section>
+      <!-- RIGHT : SELECTED LIGHT -->
 
       <aside class="detail-panel">
+
+
         <div class="detail-top">
+
           <div>
-            <p class="eyebrow">SELECTED LIGHT</p>
-            <h2 id="lightName">Light L01</h2>
+
+            <p class="eyebrow">
+              SELECTED LIGHT
+            </p>
+
+            <h2 id="lightName">
+              Light L01
+            </h2>
+
           </div>
-          <span id="lightStatus" class="normal-badge">NORMAL</span>
+
+
+          <span
+            id="lightStatus"
+            class="normal-badge"
+          >
+            NORMAL
+          </span>
+
         </div>
+
+
 
         <div class="light-visual">
-          <div class="beacon" id="beacon"></div>
-          <div>
-            <p class="small-label">POSITION</p>
-            <strong id="positionText">North-west roof edge</strong>
+
+          <div
+            class="beacon"
+            id="beacon"
+          >
           </div>
+
+
+          <div>
+
+            <p class="small-label">
+              POSITION
+            </p>
+
+            <strong id="positionText">
+              North-west roof edge
+            </strong>
+
+          </div>
+
         </div>
+
+
 
         <dl class="spec-list">
-          <div><dt>System</dt><dd>Aviation Obstruction Light</dd></div>
-          <div><dt>Type</dt><dd id="typeText">Concept / TBD</dd></div>
-          <div><dt>Power</dt><dd id="powerText">ON</dd></div>
-          <div><dt>Status</dt><dd id="statusText">Operational</dd></div>
+
+          <div>
+
+            <dt>
+              System
+            </dt>
+
+            <dd>
+              Aviation Obstruction Light
+            </dd>
+
+          </div>
+
+
+          <div>
+
+            <dt>
+              Type
+            </dt>
+
+            <dd id="typeText">
+              Concept / TBD
+            </dd>
+
+          </div>
+
+
+          <div>
+
+            <dt>
+              Power
+            </dt>
+
+            <dd id="powerText">
+              ON
+            </dd>
+
+          </div>
+
+
+          <div>
+
+            <dt>
+              Status
+            </dt>
+
+            <dd id="statusText">
+              Operational
+            </dd>
+
+          </div>
+
         </dl>
 
+
+
         <div class="actions">
-          <button id="toggleBtn" class="primary-btn" type="button">Simulate Failure</button>
-          <button id="nextBtn" class="secondary-btn" type="button">Next Light</button>
+
+          <button
+            id="toggleBtn"
+            class="primary-btn"
+            type="button"
+          >
+            Simulate Failure
+          </button>
+
+
+          <button
+            id="nextBtn"
+            class="secondary-btn"
+            type="button"
+          >
+            Next Light
+          </button>
+
         </div>
+
+
 
         <div class="note-box">
-          <strong>Engineering note</strong>
-          <p>จำนวนและตำแหน่งจริงต้องตรวจสอบกับความสูงอาคาร รูปทรงของ obstruction และมาตรฐานโครงการก่อนออกแบบติดตั้งจริง</p>
+
+          <strong>
+            Engineering note
+          </strong>
+
+          <p>
+            จำนวนและตำแหน่งจริงต้องตรวจสอบกับความสูงอาคาร
+            รูปทรงของ obstruction
+            และมาตรฐานโครงการก่อนออกแบบติดตั้งจริง
+          </p>
+
         </div>
+
+
       </aside>
+
     </section>
+
+
+
+    <!-- ================================= -->
+    <!-- LIGHTING SYSTEM -->
+    <!-- ================================= -->
+
+    <section
+      id="lighting"
+      class="content-section"
+    >
+
+
+      <div class="section-header">
+
+        <p class="eyebrow">
+          LIGHTING SYSTEM
+        </p>
+
+        <h2>
+          Aviation Obstruction Light Layout
+        </h2>
+
+        <p>
+          Proposed obstruction light arrangement
+          based on the current roof concept.
+        </p>
+
+      </div>
+
+
+
+      <div class="lighting-grid">
+
+
+        <!-- L01 -->
+
+        <div class="lighting-card">
+
+          <div class="light-icon red"></div>
+
+          <h3>
+            Light L01
+          </h3>
+
+          <p>
+            North-west roof edge
+          </p>
+
+          <span>
+            Concept / TBD
+          </span>
+
+        </div>
+
+
+
+        <!-- L02 -->
+
+        <div class="lighting-card">
+
+          <div class="light-icon red"></div>
+
+          <h3>
+            Light L02
+          </h3>
+
+          <p>
+            North-east upper corner
+          </p>
+
+          <span>
+            Concept / TBD
+          </span>
+
+        </div>
+
+
+
+        <!-- L03 -->
+
+        <div class="lighting-card">
+
+          <div class="light-icon red"></div>
+
+          <h3>
+            Light L03
+          </h3>
+
+          <p>
+            East roof projection
+          </p>
+
+          <span>
+            Concept / TBD
+          </span>
+
+        </div>
+
+
+
+        <!-- L04 -->
+
+        <div class="lighting-card">
+
+          <div class="light-icon red"></div>
+
+          <h3>
+            Light L04
+          </h3>
+
+          <p>
+            West mid roof edge
+          </p>
+
+          <span>
+            Concept / TBD
+          </span>
+
+        </div>
+
+
+
+        <!-- L05 -->
+
+        <div class="lighting-card">
+
+          <div class="light-icon red"></div>
+
+          <h3>
+            Light L05
+          </h3>
+
+          <p>
+            South-west roof corner
+          </p>
+
+          <span>
+            Concept / TBD
+          </span>
+
+        </div>
+
+
+
+        <!-- L06 -->
+
+        <div class="lighting-card">
+
+          <div class="light-icon red"></div>
+
+          <h3>
+            Light L06
+          </h3>
+
+          <p>
+            South-east roof edge
+          </p>
+
+          <span>
+            Concept / TBD
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
   </main>
 
+
   <script src="script.js"></script>
+
 </body>
 </html>
