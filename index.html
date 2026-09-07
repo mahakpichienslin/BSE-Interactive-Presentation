@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BSE Control Box Training — BSCB-004AL-V3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">B.S.E. ELECTRONIC · INTERACTIVE TRAINING</p>
+        <h1>BSCB-004AL-V3</h1>
+        <p class="hero-copy">Obstruction Light Control Box — เรียนรู้การใช้งานจากหน้าตู้จริง</p>
+      </div>
+      <div id="systemBadge" class="system-badge offline"><span></span><b>SYSTEM OFF</b></div>
+    </header>
+
+    <nav class="tabs" aria-label="Training sections">
+      <button class="tab active" data-scroll="cabinet">CONTROL BOX</button>
+      <button class="tab" data-scroll="scenario">SCENARIO TRAINING</button>
+      <button class="tab" data-scroll="reference">QUICK REFERENCE</button>
+    </nav>
+
+    <section id="cabinet" class="training-layout">
+      <article class="cabinet-card">
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow">CONTROL SYSTEM</p>
+            <h2>Interactive Control Box</h2>
+          </div>
+          <span class="microcopy">คลิกจุดบนหน้าตู้เพื่อเรียนรู้</span>
+        </div>
+
+        <div class="cabinet-stage">
+          <img src="assets/control-box.png" alt="BSCB-004AL-V3 obstruction light control box" />
+
+          <button class="hotspot" style="left:48.9%;top:28.6%" data-component="powerLed" aria-label="POWER LED"></button>
+          <button class="hotspot" style="left:48.8%;top:34.9%" data-component="photoLed" aria-label="PHOTO ON LED"></button>
+          <button class="hotspot" style="left:48.9%;top:41.4%" data-component="modeLed" aria-label="PHOTO MANUAL LED"></button>
+          <button class="hotspot" style="left:73.2%;top:28.5%" data-component="lamp1" aria-label="LAMP 1 LED"></button>
+          <button class="hotspot" style="left:73.2%;top:35.0%" data-component="lamp2" aria-label="LAMP 2 LED"></button>
+          <button class="hotspot" style="left:73.2%;top:41.4%" data-component="lamp3" aria-label="LAMP 3 LED"></button>
+          <button class="hotspot control" style="left:49.0%;top:49.5%" data-action="mode" aria-label="SET MODE"></button>
+          <button class="hotspot control" style="left:61.0%;top:49.5%" data-action="function" aria-label="SET FUNCTION"></button>
+          <button class="hotspot control" style="left:73.1%;top:49.5%" data-action="flash" aria-label="SET SPEED FLASH"></button>
+          <button class="hotspot breaker" style="left:21.0%;top:70.0%" data-action="breaker" aria-label="Main breaker"></button>
+        </div>
+
+        <div class="cabinet-caption">Hotspots ใช้สำหรับ Training UI เท่านั้น — ตำแหน่งอ้างอิงจากภาพหน้าตู้จริง</div>
+      </article>
+
+      <aside class="console-card">
+        <div class="console-head">
+          <div>
+            <p class="eyebrow">LIVE TRAINING PANEL</p>
+            <h2 id="componentTitle">Main Breaker</h2>
+          </div>
+          <span id="componentTag" class="tag">POWER</span>
+        </div>
+
+        <p id="componentDescription" class="component-description">เปิด/ปิดไฟเลี้ยง 220 VAC เข้าระบบควบคุม</p>
+
+        <div class="status-grid">
+          <div><span>POWER</span><strong id="powerState">OFF</strong></div>
+          <div><span>MODE</span><strong id="modeState">PHOTO</strong></div>
+          <div><span>FUNCTION</span><strong id="functionState">LAMP BY LAMP</strong></div>
+          <div><span>FLASH RATE</span><strong id="flashState">20 FPM</strong></div>
+        </div>
+
+        <div class="control-block">
+          <div class="control-label-row"><label for="luxSlider">AMBIENT LIGHT</label><strong id="luxValue">150 Lux</strong></div>
+          <input id="luxSlider" type="range" min="0" max="200" value="150" step="1" />
+          <div class="scale"><span>NIGHT</span><span>31.5 Lux</span><span>125 Lux</span><span>DAY</span></div>
+          <p id="photoLogic" class="logic-note">Photo Cell: LIGHT — Output waiting for system power</p>
+        </div>
+
+        <div class="lamp-grid">
+          <button class="lamp-channel" data-lamp="1"><span class="lamp-dot"></span><div><b>LAMP 1</b><small>Normal</small></div></button>
+          <button class="lamp-channel" data-lamp="2"><span class="lamp-dot"></span><div><b>LAMP 2</b><small>Normal</small></div></button>
+          <button class="lamp-channel" data-lamp="3"><span class="lamp-dot"></span><div><b>LAMP 3</b><small>Normal</small></div></button>
+        </div>
+
+        <div class="action-grid">
+          <button id="breakerBtn" class="primary">TURN BREAKER ON</button>
+          <button id="nightBtn">SIMULATE NIGHT</button>
+          <button id="clearBtn">CLEAR FAULTS</button>
+        </div>
+
+        <div id="messageBox" class="message-box neutral">
+          <span class="message-kicker">TRAINER MESSAGE</span>
+          <strong id="messageTitle">System is off</strong>
+          <p id="messageText">Turn the breaker ON to start the control box.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="scenario" class="content-card">
+      <div class="section-title-row">
+        <div>
+          <p class="eyebrow">SCENARIO TRAINING</p>
+          <h2>ฝึกจากเหตุการณ์จริงของตู้</h2>
+        </div>
+      </div>
+
+      <div class="scenario-grid">
+        <button class="scenario-card" data-scenario="photo">
+          <span>01</span><h3>PHOTO MODE</h3><p>ปรับแสงจากกลางวัน → กลางคืน และดูการตอบสนองของ Output</p>
+        </button>
+        <button class="scenario-card" data-scenario="manual">
+          <span>02</span><h3>MANUAL MODE</h3><p>สั่งให้ไฟทำงานทันทีโดยไม่รอ Photo Cell</p>
+        </button>
+        <button class="scenario-card" data-scenario="failure">
+          <span>03</span><h3>LAMP FAILURE</h3><p>จำลอง Load หาย / Lamp Fail แล้วสังเกต LED Alarm</p>
+        </button>
+        <button class="scenario-card" data-scenario="startup">
+          <span>04</span><h3>START-UP</h3><p>ฝึกขั้นตอน ON Breaker และช่วงตรวจสอบระบบเริ่มต้น</p>
+        </button>
+      </div>
+    </section>
+
+    <section id="reference" class="content-card">
+      <div class="section-title-row">
+        <div><p class="eyebrow">QUICK REFERENCE</p><h2>ค่าหลักสำหรับผู้เข้าอบรม</h2></div>
+      </div>
+      <div class="reference-grid">
+        <div><span>INPUT / OUTPUT</span><strong>220 VAC</strong><p>Input 220 VAC 50 Hz · Output 220 VAC</p></div>
+        <div><span>OUTPUT</span><strong>3 Lines</strong><p>รองรับโหลดสูงสุด 200 W ต่อ Line</p></div>
+        <div><span>PHOTO ON</span><strong>&lt; 31.5 Lux</strong><p>ความสว่างต่ำกว่าเกณฑ์ → ระบบสั่งไฟทำงาน</p></div>
+        <div><span>PHOTO OFF</span><strong>&gt; 125 Lux</strong><p>ความสว่างสูงกว่าเกณฑ์ → ระบบหยุดไฟอัตโนมัติ</p></div>
+        <div><span>FLASH RATE</span><strong>10–60 FPM</strong><p>ช่วงอัตราการกระพริบที่ปรับได้</p></div>
+        <div><span>ALARM</span><strong>NO / COM / NC</strong><p>Alarm Contact สำหรับส่งสถานะออกภายนอก</p></div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
